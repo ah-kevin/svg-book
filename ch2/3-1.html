@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-1</title>
+    <link rel="stylesheet" type="text/css" href="../svg_style.css">
+    <script type="text/javascript" src="../svg_utils.js"></script>
+</head>
+<body onload="init();">
+
+<div id="svgInput">
+    <div class="editable">
+        <pre id="svgSource" contenteditable="true"></pre>
+    </div>
+    <div id="svgOriginal">&lt;svg width="200" height="200"&gt;
+        &lt;rect x="10" y="10" width="50" height="30"
+        style="stroke: black; fill: none"/&gt;
+        &lt;/svg&gt;
+    </div>
+    <div id="svgError"></div>
+    <div>
+        <input type="button" value="Refresh" onclick="refresh();" />
+        <input type="button" value="Reset" onclick="reset();" />
+        <input type="checkbox" id="showGrid" onclick="showGrid()"
+               checked="checked" /> Show grid
+        <input type="checkbox" id="svgShowError" /> <!--Show SVG Errors-->
+    </div>
+</div>
+<div id="svgOutput">
+    <svg width="200" height="200">
+        <g id="svgGrid">
+            <image xlink:href="pixel_ruler.svg" x="0" y="0" width="200" height="200" />
+        </g>
+                <g id="svgMarkup" transform="translate(40,40)">></g>
+    </svg>
+</div>
+</body>
+</html>
